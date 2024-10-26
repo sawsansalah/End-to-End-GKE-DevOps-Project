@@ -17,4 +17,4 @@ EXPOSE 5000
 COPY . .
 
 # Run the application
-CMD ["python", "app/run.py"]
+CMD ["python", "run.py"]
