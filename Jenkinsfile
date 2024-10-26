@@ -5,7 +5,7 @@ pipeline {
 
     }
     environment  {
-        SCANNER_HOME = tool 'sonar-scanner'
+        SCANNER_HOME = tool 'sonar'
         GCP_DEFAULT_REGION = 'europe-west1'
         IMAGE_NAME = 'frontend'
         GCP_GCR_REPO_NAME = 'frontend-repo'
@@ -30,7 +30,7 @@ pipeline {
                 dir('Application-Code/app') {
                     withSonarQubeEnv('sonar-server') {
                         sh ''' 
-                        $SCANNER_HOME/bin/sonar-scanner \
+                        $SCANNER_HOME/bin/sonar \
                         -Dsonar.projectName=frontend \
                         -Dsonar.projectKey=frontend 
                         '''
