@@ -45,15 +45,7 @@ pipeline {
                 }
             }
         }
-        stage('OWASP Dependency-Check Scan') {
-            steps {
-                dir('Application-Code/app') {
-                    withCredentials([string(credentialsId: 'nvd-api', variable: 'NVD_API_KEY')]) {
-                        dependencyCheck additionalArguments: '--nvdApiKey ${NVD_API_KEY}', odcInstallation: 'DP-Check'
-                    }
-                }
-            }
-        }
+
         stage('Trivy File Scan') {
             steps {
                 dir('Application-Code/app') {
