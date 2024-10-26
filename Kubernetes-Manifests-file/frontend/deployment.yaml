@@ -25,7 +25,7 @@ spec:
       - name: my-registry-secret
       containers:
       - name: frontend
-        image: europe-west1-docker.pkg.dev/end-to-end-gke-devops-project/frontend-repo/frontend:30
+        image: europe-west1-docker.pkg.dev/end-to-end-gke-devops-project/frontend-repo/frontend:31
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
