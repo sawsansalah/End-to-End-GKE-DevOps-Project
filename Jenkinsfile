@@ -78,12 +78,12 @@ pipeline {
                 }
             }
         }
-        /*stage('Checkout from Git to edit') {
+        stage('Checkout from Git to edit') {
             steps {
                 git credentialsId: 'GITHUB', url: "${GIT_REPO_URL}", branch: 'main'
             }
-        }*/
-        /*stage('Update Deployment file') {
+        }
+        stage('Update Deployment file') {
             environment {
                 GIT_REPO_NAME = "End-to-End-GKE-DevOps-Project.git"
                 GIT_USER_NAME = "sawsansalah"
@@ -107,6 +107,6 @@ pipeline {
                     }
                 }
             }
-        }*/
+        }
     }
 }
