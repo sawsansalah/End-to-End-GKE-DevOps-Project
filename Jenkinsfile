@@ -2,6 +2,7 @@ pipeline {
     agent any 
     tools {
         jdk 'jdk'
+
     }
     environment  {
         SCANNER_HOME = tool 'sonar-scanner'
@@ -24,6 +25,9 @@ pipeline {
             }
         }
         stage('Sonarqube Analysis') {
+            tools {
+                sonarQube 'SonarQube Scanner 2.8'
+            }
             steps {
                 dir('Application-Code/app') {
                     withSonarQubeEnv('sonar-server') {
