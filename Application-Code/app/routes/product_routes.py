@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify
 from app.services.product_service import ProductService
-
+from werkzeug.urls import url_quote
 product_blueprint = Blueprint('product_blueprint', __name__)
 product_service = ProductService()
 
