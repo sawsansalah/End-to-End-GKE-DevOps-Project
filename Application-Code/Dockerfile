@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 5000
 
 # Specify the command to run on container start
-CMD ["python", "app.py"]
+CMD ["python", "run.py"]
