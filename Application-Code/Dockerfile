@@ -1,20 +1,11 @@
-# Use the official Python image from the Docker Hub
-FROM python:3.12
+# Use the official Python image from the Docker HubFROM python:3.8-slim-buster
+FROM python:3.8-slim-buster
 
-# Set the working directory in the container
 WORKDIR /app
 
-# Copy the requirements.txt file into the container
-COPY requirements.txt .
+COPY requirements.txt requirements.txt
+RUN pip3 install -r requirements.txt
 
-# Install the required Python packages
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Copy the entire application code into the container
 COPY . .
 
-# Expose the port your application will run on
-EXPOSE 5000
-
-# Specify the command to run on container start
-CMD ["python", "run.py"]
+CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
