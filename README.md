@@ -70,10 +70,12 @@ The `Kubernetes-Manifests-Files` directory holds Kubernetes manifests for deploy
 
 ## Step 1: Deploy k8s cluster using Terraform
 Clone the Git repository https://github.com/sawsansalah/End-to-End-GKE-DevOps-Project.git
-Navigate to GKE-TF
-Modify the bucket name in backend and project name in main.tf in calling module
 
-![alt text](assets/im       
+Navigate to GKE-TF
+
+Modify the bucket name in backend and project name in main.tf in calling module to your bucket name
+
+   
 Initialize the backend by running the below command
 ```sh
 
@@ -95,9 +97,10 @@ terraform apply
 
 ```
 ## Step 2: Deploy the Jenkins Server(Compute Engine) using Terraform
+
 Navigate to Jenkins-Server-TF
-Modify the bucket name in backend and project name in variables.tfvars
-![alt text](image.png)  
+
+Modify the bucket name in backend and project name in variables.tfvars to your bucket name 
 
 Initialize the backend by running the below command
 ```sh
