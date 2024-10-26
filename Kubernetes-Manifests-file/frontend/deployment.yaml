@@ -22,7 +22,7 @@ spec:
         role: frontend
     spec: 
       imagePullSecrets:
-      - name: gcr-registry-secret
+      - name: gcr-secret
       containers:
       - name: frontend
         image: europe-west1-docker.pkg.dev/end-to-end-gke-devops-project/frontend-repo/frontend:30
