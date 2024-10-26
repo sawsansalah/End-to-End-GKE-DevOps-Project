@@ -122,7 +122,6 @@ terraform apply -var-file=variables.tfvars
 ```
 Now, on GCP console connect to your Jenkins-Server by clicking on SSH and Authorize using google account.
 
-![alt text](assets/image-1.png)
 
 some services such as Jenkins, Docker, Sonarqube, Terraform, Kubectl, Gcloud CLI, and Trivy.
 
