@@ -12,7 +12,6 @@ Welcome to the Microservice Application Deployment project! 🚀
   - [GKE Code](#GKE-terraform)
   - [Jenkins Server Terraform](#jenkins-server-terraform)
   - [Kubernetes Manifests Files](#kubernetes-manifests-files)
-  - [Jenkinsfile] (#Jenkinsfile)
   - [Project Details](#project-details)
   - [Getting Started](#getting-started)
   - [Contributing](#contributing)
