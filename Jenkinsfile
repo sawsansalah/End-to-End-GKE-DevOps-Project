@@ -9,7 +9,7 @@ pipeline {
         DOCKER_HUB_REPO = '3788/frontend' 
         DOCKER_HUB_CREDENTIALS = 'dockerhub-credentials'
         GIT_REPO_URL = "https://github.com/sawsansalah/End-to-End-GKE-DevOps-Project.git"
-        IMAGE_NAME = 'frontend'
+        
     }
     stages {
         stage('Cleaning Workspace') {
