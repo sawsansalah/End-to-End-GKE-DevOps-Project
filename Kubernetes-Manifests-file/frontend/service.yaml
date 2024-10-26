@@ -5,8 +5,9 @@ metadata:
   namespace: frontend
 spec:
   ports:
-  - port: 5000
+  - port: 80
+    targetPort: 5000   
     protocol: TCP
-  type: ClusterIP
+  type: LoadBalancer
   selector:
     role: frontend
