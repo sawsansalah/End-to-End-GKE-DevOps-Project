@@ -53,7 +53,7 @@ pipeline {
         stage('Docker Image Build') {
             steps {
                 script {
-                    dir('Application-Code/app') {
+                    dir('Application-Code') {
                         docker.build("${DOCKER_HUB_REPO}:${BUILD_NUMBER}")
                     }
                 }
