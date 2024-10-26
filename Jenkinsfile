@@ -2,16 +2,12 @@ pipeline {
     agent any 
     tools {
         jdk 'jdk'
-
     }
     environment  {
         SCANNER_HOME = tool 'sonar-scanner'
-        GCP_DEFAULT_REGION = 'europe-west1'
         IMAGE_NAME = 'frontend'
-        GCP_GCR_REPO_NAME = 'frontend-repo'
-        PROJECT_ID = credentials('PROJECT_ID')
-        GCR_URL = "${GCP_DEFAULT_REGION}-docker.pkg.dev/${PROJECT_ID}/${GCP_GCR_REPO_NAME}/${IMAGE_NAME}"
-        GIT_REPO_URL = "https://github.com/sawsansalah/End-to-End-GKE-DevOps-Project.git"
+        DOCKER_HUB_REPO = '3788/frontend' // Change this to your Docker Hub repo
+        DOCKER_HUB_CREDENTIALS = 'dockerhub-credentials' // Jenkins credentials ID for Docker Hub
     }
     stages {
         stage('Cleaning Workspace') {
@@ -25,14 +21,13 @@ pipeline {
             }
         }
         stage('Sonarqube Analysis') {
-
             steps {
                 dir('Application-Code/app') {
                     withSonarQubeEnv('sonar-server') {
                         sh ''' 
                         $SCANNER_HOME/bin/sonar-scanner \
-                        -Dsonar.projectName=frontend \
-                        -Dsonar.projectKey=frontend 
+                        -Dsonar.projectName=${IMAGE_NAME} \
+                        -Dsonar.projectKey=${IMAGE_NAME} 
                         '''
                     }
                 }
@@ -57,16 +52,16 @@ pipeline {
             steps {
                 script {
                     dir('Application-Code/app') {
-                        docker.build("${GCR_URL}:${BUILD_NUMBER}")
+                        docker.build("${DOCKER_HUB_REPO}:${BUILD_NUMBER}")
                     }
                 }
             }
         }
-        stage('Push to GCR') {
+        stage('Push to Docker Hub') {
             steps {
                 script {
-                    docker.withRegistry("https://${GCP_DEFAULT_REGION}-docker.pkg.dev", 'gcr') {
-                        docker.image("${GCR_URL}:${BUILD_NUMBER}").push()
+                    docker.withRegistry('https://index.docker.io/v1/', "${DOCKER_HUB_CREDENTIALS}") {
+                        docker.image("${DOCKER_HUB_REPO}:${BUILD_NUMBER}").push()
                     }
                 }
             }
@@ -74,7 +69,7 @@ pipeline {
         stage('Trivy Image Scan') {
             steps {
                 script {
-                    sh ' trivy image ${GCR_URL}:${BUILD_NUMBER} > trivyimage.txt'
+                    sh 'trivy image ${DOCKER_HUB_REPO}:${BUILD_NUMBER} > trivyimage.txt'
                 }
             }
         }
