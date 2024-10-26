@@ -8,8 +8,6 @@ WORKDIR /app
 # Copy the rest of the application code into the container
 COPY . .
 
-RUN pip install -r requirements.txt
-
 
 # Install any needed packages specified in requirements.txt
 RUN pip install -r requirements.txt
