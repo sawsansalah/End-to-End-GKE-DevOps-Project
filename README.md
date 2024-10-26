@@ -1,7 +1,6 @@
 #  Microservice Application Deployment on GCP GKE using GCP GKE, ArgoCD, Prometheus, Grafana, and Jenkins
 
-![Three-Tier Banner](assets/proj.excalidraw)
-
+https://excalidraw.com/#json=xeAL9INo-u8P3OS9iXkp0,u08q9TTyABxb6D-2g1de9Q
 
 Welcome to the Microservice Application Deployment project! 🚀
 
@@ -114,7 +113,7 @@ terraform apply -var-file=variables.tfvars
 ```
 Now, on GCP console connect to your Jenkins-Server by clicking on SSH and Authorize using google account.
 
-![alt text ](image-1.png)
+![alt text ](assets/image-1.png)
 
 some services such as Jenkins, Docker, Sonarqube, Terraform, Kubectl, Gcloud CLI, and Trivy.
 
@@ -145,31 +144,31 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 
 ```
 
-![alt text](image.png)
+![alt text](assets/image.png)
 
  expose the argoCD server as LoadBalancer using the below command
 ```sh
 kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}'           
 ```
-![alt text](image-1.png)
+![alt text](assets/image-1.png)
 
 ## step 4 : jenkins Pipeline to deploy our frontend Code
 Go to Jenkins Dashboard
 
 Click on New Item
-![alt text](image-2.png)
+![alt text](assets/image-2.png)
 Provide the name of your Pipeline and click on OK.
 
-![alt text](image-3.png)
+![alt text](assets/image-3.png)
 Now, click on the build.
 
 Our pipeline was successful after a few common mistakes.
 
 Note: Do the changes in the Pipeline according to your project.
 
-![alt text](image-4.png)
-![alt text](image-5.png)
-![alt text](image-6.png)
+![alt text](assets/image-4.png)
+![alt text](assets/image-5.png)
+![alt text](assets/image-6.png)
 
 ## step 5 : We will set up the Monitoring for our GKE Cluster. We can monitor the Cluster Specifications 
 
@@ -187,6 +186,6 @@ helm repo update
 helm install grafana grafana/grafana
 ```
 
-![alt text](image-7.png)
-![alt text](image-8.png)
-![alt text](image-9.png)
+![alt text](assets/image-7.png)
+![alt text](assets/image-8.png)
+![alt text](assets/image-9.png)
