@@ -25,9 +25,7 @@ pipeline {
             }
         }
         stage('Sonarqube Analysis') {
-            tools {
-                sonarQube 'SonarQube Scanner 2.8'
-            }
+
             steps {
                 dir('Application-Code/app') {
                     withSonarQubeEnv('sonar-server') {
