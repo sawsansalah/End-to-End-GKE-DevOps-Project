@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  namespace: frontend
+  labels:
+    role: frontend
+    env: demo
+spec: 
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 25%
+  selector:
+    matchLabels: 
+      role: frontend
+  template:
+    metadata:
+      labels:
+        role: frontend
+    spec: 
+      imagePullSecrets:
+      - name: gcr-registry-secret
+      containers:
+      - name: frontend
+        image: europe-west1-docker.pkg.dev/end-to-end-gke-devops-project/frontend-repo/frontend:24
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5000
