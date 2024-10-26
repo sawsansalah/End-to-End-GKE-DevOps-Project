@@ -1,10 +1,8 @@
 #  Microservice Application Deployment on GCP GKE using GCP GKE, ArgoCD, Prometheus, Grafana, and Jenkins
 
-https://excalidraw.com/#json=xeAL9INo-u8P3OS9iXkp0,u08q9TTyABxb6D-2g1de9Q
 
 Welcome to the Microservice Application Deployment project! 🚀
-
-
+![alt text](assets/projecr.png)
 
 ## Table of Contents
 - [Microservice Application Deployment on GCP GKE using GCP GKE, ArgoCD, Prometheus, Grafana, and Jenkins](#Microservice-application-deployment-on-gcp-gke-using-gcp-gke-argocd-prometheus-grafana-andjenkins)
