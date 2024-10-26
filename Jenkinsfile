@@ -6,8 +6,10 @@ pipeline {
     environment  {
         SCANNER_HOME = tool 'sonar-scanner'
         IMAGE_NAME = 'frontend'
-        DOCKER_HUB_REPO = '3788/frontend' // Change this to your Docker Hub repo
-        DOCKER_HUB_CREDENTIALS = 'dockerhub-credentials' // Jenkins credentials ID for Docker Hub
+        DOCKER_HUB_REPO = '3788/frontend' 
+        DOCKER_HUB_CREDENTIALS = 'dockerhub-credentials'
+        GIT_REPO_URL = "https://github.com/sawsansalah/End-to-End-GKE-DevOps-Project.git"
+        IMAGE_NAME = 'frontend'
     }
     stages {
         stage('Cleaning Workspace') {
