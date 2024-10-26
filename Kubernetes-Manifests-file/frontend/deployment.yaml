@@ -25,7 +25,7 @@ spec:
       - name: gcr-secret
       containers:
       - name: frontend
-        image: 3788/frontend:35
+        image: 3788/frontend:36
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
