@@ -1,0 +1,13 @@
+project = "end-to-end-gke-devops-project"
+region = "europe-west1"
+vpc_name = "jenkins"
+ip_cidr_range = "10.0.0.0/24"
+subnet_name = "jenkins-subnet"
+route_name = "jenkins-route" 
+instance_name = "jenkins-instance"
+zone = "europe-west1-b"
+machine_type = "n1-standard-4"
+image = "ubuntu-os-cloud/ubuntu-2204-lts"
+disk_size = 30
+pv_disk_name = "jenkins-disk"
+pv_disk_size = 10
