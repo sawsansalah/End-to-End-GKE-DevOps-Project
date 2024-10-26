@@ -46,26 +46,27 @@ The `Kubernetes-Manifests-Files` directory holds Kubernetes manifests for deploy
 
 ## Project Overview:
 
-Create a GCP Project: Create a Project and a Service Account on GCP with the necessary permissions to facilitate deployment and management activities from local.
+**Create a GCP Project**: Create a Project and a Service Account on GCP with the necessary permissions to facilitate deployment and management activities from local.
 
-Infrastructure as Code (IaC): Use Terraform and Gcloud CLI to set up the Jenkins server (Compute Engine) on GCP.
+**Infrastructure as Code (IaC)**: Use Terraform and Gcloud CLI to set up the Jenkins server (Compute Engine) on GCP.
 
-Jenkins Server Configuration: Install and configure essential tools on the Jenkins server, including Jenkins itself, Docker, Sonarqube, Terraform, Kubectl, Gcloud CLI, and Trivy.
+**Jenkins Server Configuration**: Install and configure essential tools on the Jenkins server, including Jenkins itself, Docker, Sonarqube, Terraform, Kubectl, Gcloud CLI, and Trivy.
 
-GKE Cluster Deployment: Utilize “gcloud container” commands to create an Amazon GKE cluster, a managed Kubernetes service on GCP.
-Load Balancer Configuration: Configure GCP Application Load Balancer (ALB) for the GKE cluster.
+**GKE Cluster Deployment**: Utilize “gcloud container” commands to create an Amazon GKE cluster, a managed Kubernetes service on GCP.
 
-Docker  Repositories: push your image to docker repo
+**Load Balancer Configuration**: Configure GCP Application Load Balancer (ALB) for the GKE cluster.
 
-ArgoCD Installaion: Install and set up ArgoCD for continuous delivery and GitOps.
+**Docker  Repositories**: push your image to docker repo
 
-Sonarqube Integration: Integrate Sonarqube for code quality analysis in the DevSecOps pipeline.
+**ArgoCD Installaion**: Install and set up ArgoCD for continuous delivery and GitOps.
 
-Jenkins Pipelines: Create Jenkins pipelines for deploying backend and frontend code to the GKE cluster.
+**Sonarqube Integration**: Integrate Sonarqube for code quality analysis in the DevSecOps pipeline.
 
-Monitoring Setup: Implement monitoring for the GKE cluster using Helm, Prometheus, and Grafana.
+**Jenkins Pipelines**: Create Jenkins pipelines for deploying backend and frontend code to the GKE cluster.
 
-ArgoCD Application Deployment: Use ArgoCD to deploy the Microservice application
+**Monitoring Setup**: Implement monitoring for the GKE cluster using Helm, Prometheus, and Grafana.
+
+**ArgoCD Application Deployment**: Use ArgoCD to deploy the Microservice application
 
 ## Step 1: Deploy k8s cluster using Terraform
 Clone the Git repository https://github.com/sawsansalah/End-to-End-GKE-DevOps-Project.git
