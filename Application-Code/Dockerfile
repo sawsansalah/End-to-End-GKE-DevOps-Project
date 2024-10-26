@@ -1,22 +1,20 @@
-# Use an official Python runtime as a parent image
-FROM python:3.10
+# Use the official Python image from the Docker Hub
+FROM python:3.12
 
 # Set the working directory in the container
 WORKDIR /app
 
+# Copy the requirements.txt file into the container
+COPY requirements.txt .
 
-# Copy the rest of the application code into the container
+# Install the required Python packages
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the entire application code into the container
 COPY . .
 
-
-# Install any needed packages specified in requirements.txt
-RUN pip install -r requirements.txt
-
-# Expose the port your app runs on
+# Expose the port your application will run on
 EXPOSE 5000
 
-# Copy the rest of the application code into the container
-COPY . .
-
-# Run the application
-CMD ["python", "run.py"]
+# Specify the command to run on container start
+CMD ["python", "app.py"]
