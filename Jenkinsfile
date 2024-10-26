@@ -1,4 +1,4 @@
-pipeline {
+ipeline {
     agent any 
     tools {
         jdk 'jdk'
@@ -30,7 +30,7 @@ pipeline {
                 dir('Application-Code/app') {
                     withSonarQubeEnv('sonar-server') {
                         sh ''' 
-                        $SCANNER_HOME/bin/-sonar-scanner \
+                        $SCANNER_HOME/bin/sonar-scanner \
                         -Dsonar.projectName=frontend \
                         -Dsonar.projectKey=frontend 
                         '''
@@ -45,15 +45,7 @@ pipeline {
                 }
             }
         }
-        stage('OWASP Dependency-Check Scan') {
-            steps {
-                dir('Application-Code/app') {
-                    withCredentials([string(credentialsId: 'nvd-api', variable: 'NVD_API_KEY')]) {
-                        dependencyCheck additionalArguments: '--nvdApiKey ${NVD_API_KEY}', odcInstallation: 'DP-Check'
-                    }
-                }
-            }
-        }
+
         stage('Trivy File Scan') {
             steps {
                 dir('Application-Code/app') {
@@ -86,12 +78,12 @@ pipeline {
                 }
             }
         }
-        stage('Checkout from Git to edit') {
+        /*stage('Checkout from Git to edit') {
             steps {
                 git credentialsId: 'GITHUB', url: "${GIT_REPO_URL}", branch: 'main'
             }
-        }
-        stage('Update Deployment file') {
+        }*/
+        /*stage('Update Deployment file') {
             environment {
                 GIT_REPO_NAME = "End-to-End-GKE-DevOps-Project.git"
                 GIT_USER_NAME = "sawsansalah"
@@ -115,6 +107,6 @@ pipeline {
                     }
                 }
             }
-        }
+        }*/
     }
 }
