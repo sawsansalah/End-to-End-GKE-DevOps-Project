@@ -14,8 +14,7 @@ Welcome to the Microservice Application Deployment project! 🚀
   - [Kubernetes Manifests Files](#kubernetes-manifests-files)
   - [Project Details](#project-details)
   - [Getting Started](#getting-started)
-  - [Contributing](#contributing)
-  - [License](#license)
+
 
 ## Application Code
 The `Application-Code` directory contains the source code for the microservice Application. 
