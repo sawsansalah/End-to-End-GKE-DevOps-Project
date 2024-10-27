@@ -52,7 +52,7 @@ The `Kubernetes-Manifests-Files` directory holds Kubernetes manifests for deploy
 
 **Jenkins Server Configuration**: Install and configure essential tools on the Jenkins server, including Jenkins itself, Docker, Sonarqube, Terraform, Kubectl, Gcloud CLI, and Trivy.
 
-**GKE Cluster Deployment**: Utilize “gcloud container” commands to create an Amazon GKE cluster, a managed Kubernetes service on GCP.
+**GKE Cluster Deployment**: terrform module to create an Amazon GKE cluster, a managed Kubernetes service on GCP.
 
 **Load Balancer Configuration**: Configure GCP Application Load Balancer (ALB) for the GKE cluster.
 
